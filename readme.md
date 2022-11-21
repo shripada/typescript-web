@@ -1,38 +1,24 @@
-## Initialise a node project
+# typescript-web
 
-Create your project folder and open it in VSCode, and then open the embedded terminal, and initialise node project by running the command:
-`npm init -y`
+This is a boilerplate project that you can use to develop typescript based web apps. We use webpack bundler for bundling the assets and ensure transpiling of typescript into js and minifying js, etc.
 
-## Webpack initialisation
+## Installing the dependencies
 
-Now we need to install the core tool for the building process — Webpack 5 (it’s the latest version on writing day).
-`npm install webpack webpack-cli --save-dev`
+Once you clone this repo, run
+`npm install`
 
-## Webpack configurations
+## Development mode
 
-To be more production-ready, we will create multiple webpack configs, one for development, another one for building production artifacts.
+Run
 
-## TypeScript integration
+```
+npm run start
+```
 
-`npm install --save-dev typescript ts-loader`
+This will build the app in dev mode and dev server will start running the app in localhost:8080 port.
 
-### configure the ts-loader to load and transpile ts/tsx files
+You can debug the typescript files in web as well as inside vscode.
 
-See the rules array of webpack.common.js to see how the ts-loader is setup with webpack.
+## Source files
 
-## Webpack plugins
-
-- `clean-webpack-plugin`: to clean the dist folder each time, when we do a new build.
-- `html-webpack-plugin`: to generate index.html file from a template with scripts and style tags.
-- `fork-ts-checker-webpack-plugin` - this plugin allows us to check typescript typings as a separate process. It will improve build performance.
-- `copy-webpack-plugin` - This plugin gives us the ability to copy the assets folder with its content to dist folder.
-
-`npm install clean-webpack-plugin copy-webpack-plugin fork-ts-checker-webpack-plugin html-webpack-plugin --save-dev`
-
-## Jest Unit Testing framework
-
-`npm install --save-dev jest ts-jest @types/jest `
-
-## ESLint configuration
-
-`npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser — save-dev`
+Add all your typescript files and any jest unit test files under /src folder or in any subfolder under src/. src/index.html is your template html file. Any assets such as fonts or images must be placed under /src/assets/ folder.
