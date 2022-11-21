@@ -4,4 +4,5 @@ export function add(a: number, b: number): number {
   return a + b;
 }
 
+// Just to demonstrate debug
 add(2, 3);
